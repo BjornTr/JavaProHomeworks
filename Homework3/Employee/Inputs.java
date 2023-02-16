@@ -35,7 +35,6 @@ public class Inputs {
         employeePhone = employee.getPhone();
         employeePosition = employee.getPosition();
         employeeAge = employee.getAge();
-
     }
 
     public static void getOutput() {
