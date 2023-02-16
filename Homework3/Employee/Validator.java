@@ -2,6 +2,7 @@ package Homework3.Employee;
 
 import java.util.Scanner;
 
+
 public class Validator {
 
     public static String validateNameInput(Scanner scanner) {
