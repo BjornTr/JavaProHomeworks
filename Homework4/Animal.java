@@ -1,4 +1,4 @@
-package Homework4.Animals;
+package Homework4;
 
 public class Animal {
 
@@ -6,8 +6,8 @@ public class Animal {
     protected String type;
     protected String breed;
     protected String name;
-    protected int run;
-    protected int swim;
+    protected double run;
+    protected double swim;
 
     public Animal() {
         count++;
@@ -17,19 +17,19 @@ public class Animal {
         return count;
     }
 
-    protected void run(int distance) {
+    protected void run(double distance) {
         if (run >= distance) {
-            System.out.println(this.type + " named " + this.name + " - ran - " + distance + "m.");
+            System.out.println(this.type + " named " + this.name + " - successfully ran - " + distance + "m.");
         } else {
-            System.out.println(this.type + " named " + this.name + "WASTED");
+            System.out.println(this.type + " named " + this.name + " - WASTED");
         }
     }
 
-    protected void swim(int distance) {
-        if (run >= distance) {
-            System.out.println(this.type + " named " + this.name + " - swam - " + distance + "m.");
+    protected void swim(double distance) {
+        if (swim >= distance) {
+            System.out.println(this.type + " named " + this.name + " - successfully swam - " + distance + "m.");
         } else {
-            System.out.println(this.type + " named " + this.name + "WASTED");
+            System.out.println(this.type + " named " + this.name + " - WASTED");
         }
     }
 

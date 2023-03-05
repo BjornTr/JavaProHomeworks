@@ -1,12 +1,10 @@
-package Homework4.Animals;
+package Homework4;
 
-import Homework4.Animals.Animal;
-
-public class Dog extends Animal {
+public class Cat extends Animal {
 
     private static int count;
 
-    public Dog(String type, String breed, String name, double swim, double run) {
+    public Cat(String type, String breed, String name, double swim, double run) {
         this.type = type;
         this.breed = breed;
         this.name = name;
