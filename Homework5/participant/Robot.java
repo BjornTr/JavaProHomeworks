@@ -2,7 +2,7 @@ package Homework5.participant;
 
 public class Robot extends Participant {
 
-    private String name;
+    private final String name;
 
     public Robot(String name, double maxDis, double maxHeight) {
         this.name = name;

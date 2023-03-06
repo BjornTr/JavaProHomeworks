@@ -1,7 +1,7 @@
 package Homework5.participant;
 
 public class Cat extends Participant {
-    private String name;
+    private final String name;
 
     public Cat(String name, double maxDis, double maxHeight) {
         this.name = name;

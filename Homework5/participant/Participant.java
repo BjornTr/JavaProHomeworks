@@ -24,7 +24,5 @@ public abstract class Participant {
         }
     }
 
-    public String getName() {
-        return null;
-    }
+    public abstract String getName();
 }
