@@ -4,7 +4,27 @@ public abstract class Participant {
     protected double maxDis;
     protected double maxHeight;
 
-    abstract boolean run(double distance);
+    public boolean run(double distance) {
+        if (distance < maxDis) {
+            System.out.println("Participant has passed the distance ");
+            return true;
+        } else {
+            System.out.println("Participant has failed");
+            return false;
+        }
+    }
 
-    abstract boolean jump(double height);
+    public boolean jump(double height) {
+        if (height < maxHeight) {
+            System.out.println("Participant has passed the distance ");
+            return true;
+        } else {
+            System.out.println("Participant has failed");
+            return false;
+        }
+    }
+
+    public String getName() {
+        return null;
+    }
 }
