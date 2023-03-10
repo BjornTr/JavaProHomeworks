@@ -1,34 +1,53 @@
 package Homework6;
 
-import java.util.Locale;
-import java.util.Scanner;
+import Homework6.tools.Validator;
 
 public class HomeWorkApp {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+        Validator validator = new Validator();
 
-//        printThreeWords();
-//        checkSumSign(scanner);
-//        printColor(scanner);
-//        compareNums(scanner);
-//        isSumBetween(scanner);
-//        printNumberSign(scanner);
-//        isNegative(scanner);
-//        printString(scanner);
-        isLeapYear(scanner);
+        taskHeader(1);
+        printThreeWords();
 
+        taskHeader(2);
+        checkSumSign(validator);
+
+        taskHeader(3);
+        printColor(validator);
+
+        taskHeader(4);
+        compareNums(validator);
+
+        taskHeader(5);
+        isSumBetween(validator);
+
+        taskHeader(6);
+        printNumberSign(validator);
+
+        taskHeader(7);
+        isNegative(validator);
+
+        taskHeader(8);
+        repeatText(validator);
+
+        taskHeader(9);
+        isLeapYear(validator);
+    }
+
+    public static void taskHeader(int number) {
+        System.out.println("\nTask " + number + ":\n");
     }
 
     public static void printThreeWords() {
-        System.out.println("Task 1");
+
         System.out.println("Orange\nBanana\nApple");
     }
 
-    public static void checkSumSign(Scanner scanner) {
-        System.out.println("Task 2");
+    public static void checkSumSign(Validator validator) {
+
         System.out.println("Enter two numbers:");
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
+        int a = validator.getInt();
+        int b = validator.getInt();
 
         int sum = a + b;
         if (sum >= 0) {
@@ -38,25 +57,23 @@ public class HomeWorkApp {
         }
     }
 
-    public static void printColor(Scanner scanner) {
-        System.out.println("Task 3");
-        System.out.println("Enter a number:");
-        int value = scanner.nextInt();
+    public static void printColor(Validator validator) {
 
-        if (value <= 0) {
-            System.out.println("Red");
-        } else if (value >= 0 && value <= 100) {
-            System.out.println("Yellow");
-        } else if (value >= 100) {
-            System.out.println("Green");
+        System.out.println("Enter a number:");
+        int value = validator.getInt();
+
+        switch (value >= 0 ? (value >= 100 ? 2 : 1) : 0) {
+            case 0 -> System.out.println("Red");
+            case 1 -> System.out.println("Yellow");
+            case 2 -> System.out.println("Green");
         }
     }
 
-    public static void compareNums(Scanner scanner) {
-        System.out.println("Task 4");
+    public static void compareNums(Validator validator) {
+
         System.out.println("Enter two numbers to compare:");
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
+        int a = validator.getInt();
+        int b = validator.getInt();
 
         if (a >= b) {
             System.out.println("a >= b");
@@ -65,24 +82,24 @@ public class HomeWorkApp {
         }
     }
 
-    public static void isSumBetween(Scanner scanner) {
-        System.out.println("Task 5");
+    public static void isSumBetween(Validator validator) {
+
         System.out.print("Enter the first number: ");
-        double a = scanner.nextDouble();
+        double a = validator.getDouble();
 
         System.out.print("Enter the second number: ");
-        double b = scanner.nextDouble();
+        double b = validator.getDouble();
 
         double sum = a + b;
         boolean isBetween10And20 = sum >= 10.0 && sum <= 20.0;
 
-        System.out.print("The sum is between 10 and 20 - " + isBetween10And20);
+        System.out.println("The sum is between 10 and 20 - " + isBetween10And20);
     }
 
-    public static void printNumberSign(Scanner scanner) {
-        System.out.println("Task 6");
+    public static void printNumberSign(Validator validator) {
+
         System.out.println("Enter a number: ");
-        int number = scanner.nextInt();
+        int number = validator.getInt();
 
         if (number >= 0) {
             System.out.println("You entered a positive number.");
@@ -91,32 +108,33 @@ public class HomeWorkApp {
         }
     }
 
-    public static void isNegative(Scanner scanner) {
-        System.out.println("Task 7");
+    public static void isNegative(Validator validator) {
+
         System.out.println("Enter a number: ");
-        int number = scanner.nextInt();
+        int number = validator.getInt();
         boolean isNegative = number <= 0;
-        System.out.print("The number is negative - " + isNegative);
+        System.out.println("The number is negative - " + isNegative);
     }
 
-    public static void printString(Scanner scanner) {
-        System.out.println("Task 8");
-        System.out.println("Enter the text: ");
-        String ranText = scanner.nextLine();
-        System.out.println("Enter the number: ");
-        int count = scanner.nextInt();
+    public static void repeatText(Validator validator) {
+
+        System.out.println("Enter text: ");
+        validator.getString();
+        String ranText = validator.getString();
+
+        System.out.println("Enter a number: ");
+        int count = validator.getInt();
 
         for (int i = 0; i < count; i++) {
             System.out.println(ranText);
         }
     }
 
-    public static boolean isLeapYear(Scanner scanner) {
-        System.out.println("Task 9");
-        System.out.println("Please enter the year: ");
-        int year = scanner.nextInt();
+    public static void isLeapYear(Validator validator) {
+
+        System.out.println("Please enter year: ");
+        int year = validator.getInt();
         boolean isLeap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
         System.out.println(isLeap ? year + " is a leap year" : year + " is not a leap year");
-        return isLeap;
     }
 }
