@@ -1,15 +1,18 @@
 package Homework6;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class HomeWorkApp {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
 
-        printThreeWords();
-        checkSumSign(scanner);
-        printColor(scanner);
-        compareNums(scanner);
+//        printThreeWords();
+//        checkSumSign(scanner);
+//        printColor(scanner);
+//        compareNums(scanner);
+        isSumBetween(scanner);
+
     }
 
     public static void printThreeWords() {
@@ -57,4 +60,18 @@ public class HomeWorkApp {
             System.out.println("a < b");
         }
     }
+
+    public static void isSumBetween(Scanner scanner) {
+        System.out.print("Enter the first number: ");
+        double a = scanner.nextDouble();
+
+        System.out.print("Enter the second number: ");
+        double b = scanner.nextDouble();
+
+        double sum = a + b;
+        boolean isBetween10And20 = sum >= 10.0 && sum <= 20.0;
+
+        System.out.print("The sum is between 10 and 20 - " + isBetween10And20);
+    }
+
 }
