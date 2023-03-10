@@ -14,7 +14,8 @@ public class HomeWorkApp {
 //        isSumBetween(scanner);
 //        printNumberSign(scanner);
 //        isNegative(scanner);
-        printString(scanner);
+//        printString(scanner);
+        isLeapYear(scanner);
 
     }
 
@@ -108,5 +109,14 @@ public class HomeWorkApp {
         for (int i = 0; i < count; i++) {
             System.out.println(ranText);
         }
+    }
+
+    public static boolean isLeapYear(Scanner scanner) {
+        System.out.println("Task 9");
+        System.out.println("Please enter the year: ");
+        int year = scanner.nextInt();
+        boolean isLeap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+        System.out.println(isLeap ? year + " is a leap year" : year + " is not a leap year");
+        return isLeap;
     }
 }
