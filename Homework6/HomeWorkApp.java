@@ -12,7 +12,8 @@ public class HomeWorkApp {
 //        printColor(scanner);
 //        compareNums(scanner);
 //        isSumBetween(scanner);
-        printNumberSign(scanner);
+//        printNumberSign(scanner);
+        isPositive(scanner);
 
     }
 
@@ -87,4 +88,13 @@ public class HomeWorkApp {
             System.out.println("You entered a negative number.");
         }
     }
+
+    public static void isPositive(Scanner scanner) {
+        System.out.println("Task 7");
+        System.out.println("Enter a number: ");
+        int number = scanner.nextInt();
+        boolean isPositive = number >= 0;
+        System.out.print("The number is positive - " + isPositive);
+    }
+
 }
