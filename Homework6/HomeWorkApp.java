@@ -11,7 +11,8 @@ public class HomeWorkApp {
 //        checkSumSign(scanner);
 //        printColor(scanner);
 //        compareNums(scanner);
-        isSumBetween(scanner);
+//        isSumBetween(scanner);
+        printNumberSign(scanner);
 
     }
 
@@ -62,6 +63,7 @@ public class HomeWorkApp {
     }
 
     public static void isSumBetween(Scanner scanner) {
+        System.out.println("Task 5");
         System.out.print("Enter the first number: ");
         double a = scanner.nextDouble();
 
@@ -74,4 +76,15 @@ public class HomeWorkApp {
         System.out.print("The sum is between 10 and 20 - " + isBetween10And20);
     }
 
+    public static void printNumberSign(Scanner scanner) {
+        System.out.println("Task 6");
+        System.out.println("Enter a number: ");
+        int number = scanner.nextInt();
+
+        if (number >= 0) {
+            System.out.println("You entered a positive number.");
+        } else {
+            System.out.println("You entered a negative number.");
+        }
+    }
 }
