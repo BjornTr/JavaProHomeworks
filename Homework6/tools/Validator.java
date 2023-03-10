@@ -27,9 +27,12 @@ public class Validator {
 
     public String getString() {
         String input;
+        scanner.nextLine();
         do {
             input = scanner.nextLine().trim();
-            System.out.println("Invalid input. Please enter a non-empty string.");
+            if (input.isEmpty()) {
+                System.out.println("Invalid input. Please enter a non-empty string.");
+            }
         } while (input.isEmpty());
         return input;
     }
