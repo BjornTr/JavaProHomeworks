@@ -6,23 +6,23 @@ public class HomeWorkApp {
     public static void main(String[] args) {
         Validator validator = new Validator();
 
-//        taskHeader(1);
-//        printThreeWords();
-//
-//        taskHeader(2);
-//        checkSumSign(validator);
-//
-//        taskHeader(3);
-//        printColor(validator);
-//
-//        taskHeader(4);
-//        compareNums(validator);
-//
-//        taskHeader(5);
-//        isSumBetween(validator);
-//
-//        taskHeader(6);
-//        printNumberSign(validator);
+        taskHeader(1);
+        printThreeWords();
+
+        taskHeader(2);
+        checkSumSign(validator);
+
+        taskHeader(3);
+        printColor(validator);
+
+        taskHeader(4);
+        compareNums(validator);
+
+        taskHeader(5);
+        isSumBetween(validator);
+
+        taskHeader(6);
+        printNumberSign(validator);
 
         taskHeader(7);
         isNegative(validator);
