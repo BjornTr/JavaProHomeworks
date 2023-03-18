@@ -13,6 +13,7 @@ public class GuessTheWordGame {
             "pear", "pepper", "pineapple", "pumpkin", "potato"};
 
     public static void playGame() {
+        System.out.println("Task 5 - <Guess The Word> game");
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         String word = WORDS[random.nextInt(WORDS.length)];

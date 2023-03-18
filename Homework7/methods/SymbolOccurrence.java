@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class SymbolOccurrence {
 
     public static void findSymbolOccurrence() {
+        System.out.println("Task 1 - findSymbolOccurrence method");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter text: ");
         String s = scanner.nextLine();

@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Palindrome {
 
     public static boolean isPalindrome() {
+        System.out.println("Task 4 - isPalindrome method");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter text: ");
         String s = scanner.nextLine();

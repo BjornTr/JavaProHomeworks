@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class StringReverse {
 
     public static String stringReverse() {
+        System.out.println("Task 3 - stringReverse method");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter text: ");
         String s = scanner.nextLine();

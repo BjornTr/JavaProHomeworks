@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class WordPosition {
 
     public static int findWordPosition() {
+        System.out.println("Task 2 - findWordPosition method");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the source string: ");
         String source = scanner.nextLine();
