@@ -1,4 +1,4 @@
-package Homework7.symboloccurrence;
+package Homework7.methods;
 
 import java.util.Scanner;
 
@@ -16,6 +16,6 @@ public class SymbolOccurrence {
                 count++;
             }
         }
-        System.out.println("The character '" + symbol + "' appears " + count + " times in the string.");
+        System.out.println("The character '" + symbol + "' appears " + count + " times in the text.");
     }
 }
