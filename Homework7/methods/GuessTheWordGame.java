@@ -24,16 +24,17 @@ public class GuessTheWordGame {
             if (guess.equals(word)) {
                 System.out.println("Congratulations, you guessed the word!");
                 break;
-            } else { System.out.print("Wrong! Try again. ");
-                StringBuilder sb = new StringBuilder(guessedWord);
-                for (int i = 0; i < word.length(); i++) {
-                    if (word.charAt(i) == guess.charAt(i)) {
-                        sb.setCharAt(i, guess.charAt(i));
-                    }
-                }
-                guessedWord = sb.toString();
-                System.out.println("Guess the word: " + guessedWord);
             }
+            System.out.print("Wrong! Try again. ");
+            StringBuilder sb = new StringBuilder(guessedWord);
+            for (int i = 0; i < word.length(); i++) {
+                if (word.charAt(i) == guess.charAt(i)) {
+                    sb.setCharAt(i, guess.charAt(i));
+                }
+            }
+            guessedWord = sb.toString();
+            System.out.println("Guess the word: " + guessedWord);
+
         }
     }
 }
