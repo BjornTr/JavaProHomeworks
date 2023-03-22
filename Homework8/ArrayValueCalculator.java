@@ -17,7 +17,7 @@ public class ArrayValueCalculator {
         Random random = new Random();
 
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
+            for (int j = 0; j < array[i].length; j++) { // Changed from array.length to array[i].length
 
 //                As an example without characters, but only integers
 
@@ -44,16 +44,20 @@ public class ArrayValueCalculator {
 
     public static int doCalc(String[][] array) throws ArraySizeException, ArrayDataException {
         int sum = 0;
-        if (array.length != 4 || array[0].length != 4) {
+        int numRows = array.length;
+        int numCols = array[0].length;
+        if (numRows != 4 || numCols != 4) {
             throw new ArraySizeException("Invalid array size! Must be 4x4");
-        } else {
-            for (int i = 0; i < array.length; i++) {
-                for (int j = 0; j < array[0].length; j++) {
-                    try {
-                        sum += Integer.parseInt(array[i][j]);
-                    } catch (NumberFormatException ex) {
-                        throw new ArrayDataException("Invalid data in cell (" + i + "," + j + "): " + ex.getMessage());
-                    }
+        }
+        for (int i = 0; i < numRows; i++) {
+            if (array[i].length != numCols) {
+                throw new ArraySizeException("Invalid array size! All rows must have the same number of columns");
+            }
+            for (int j = 0; j < numCols; j++) {
+                try {
+                    sum += Integer.parseInt(array[i][j]);
+                } catch (NumberFormatException ex) {
+                    throw new ArrayDataException("Invalid data in cell (" + i + "," + j + "): " + ex.getMessage());
                 }
             }
         }
