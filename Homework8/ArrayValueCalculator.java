@@ -23,7 +23,6 @@ public class ArrayValueCalculator {
 
                 array[i][j] = String.valueOf(random.nextInt(100) + 1);
 
-
 //                As an example with characters and integers to test ArrayDataException
 
 //                if (random.nextBoolean()) {
@@ -43,17 +42,16 @@ public class ArrayValueCalculator {
     }
 
     public static int doCalc(String[][] array) throws ArraySizeException, ArrayDataException {
-        int sum = 0;
-        int numRows = array.length;
-        int numCols = array[0].length;
-        if (numRows != 4 || numCols != 4) {
-            throw new ArraySizeException("Invalid array size! Must be 4x4");
-        }
-        for (int i = 0; i < numRows; i++) {
-            if (array[i].length != numCols) {
-                throw new ArraySizeException("Invalid array size! All rows must have the same number of columns");
+
+        for (String[] element : array) {
+            if (array.length != element.length) {
+                throw new ArraySizeException("Invalid array size! Must be 4x4");
             }
-            for (int j = 0; j < numCols; j++) {
+        }
+
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
                 try {
                     sum += Integer.parseInt(array[i][j]);
                 } catch (NumberFormatException ex) {
