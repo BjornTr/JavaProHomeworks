@@ -1,15 +1,14 @@
 package Homework4;
 
-public class Dog extends Animal {
+public class Dog extends AnimalWithBreed {
 
     private static int count;
 
-    public Dog(String type, String breed, String name, double swim, double run) {
-        this.type = type;
-        this.breed = breed;
+    public Dog(String breed, String name, double maxRunDistance, double maxSwimDistance) {
+        super(breed);
         this.name = name;
-        this.swim = swim;
-        this.run = run;
+        this.run = maxRunDistance;
+        this.swim = maxSwimDistance;
         count++;
     }
 
