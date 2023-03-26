@@ -9,16 +9,18 @@ public class Main {
     public static void main(String[] args) {
 
         List<Animal> animals = new ArrayList<>();
-        animals.add(new Cat("Cat", "Breedless", "Murzik", 0, 200.00));
-        animals.add(new Cat("Cat", "Breedless", "Barsik", 0, 200.00));
-        animals.add(new Dog("Dog", "Pitbull", "Cerberus", 666.66, 6666.66));
-        animals.add(new Dog("Dog", "Labrador", "Useless meat", 200.00, 300.00));
+        animals.add(new Cat("Breedless", "Murzik", 200.00, 0));
+        animals.add(new Cat("British Shorthair", "Barsik", 180.00, 0));
+        animals.add(new Dog("Pitbull", "Cerberus", 6666.66, 666.66));
+        animals.add(new Dog("Labrador", "Useless meat", 300.00, 200.00));
+        animals.add(new Horse("Spirit", 2000.00, 10.00));
 
         System.out.println(
                 "\nGeneral information: " +
                         "\nAnimals total: " + (Animal.getCount()) +
                         "\nCats total: " + (Cat.getCount()) +
-                        "\nDogs total: " + (Dog.getCount()) + "\n");
+                        "\nDogs total: " + (Dog.getCount()) +
+                        "\nHorses total: " + (Horse.getCount()) + "\n");
 
         animals.forEach(animal -> System.out.println(animal.toString()));
 

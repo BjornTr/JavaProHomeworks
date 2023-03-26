@@ -1,11 +1,10 @@
 package Homework4;
 
-public class Dog extends AnimalWithBreed {
+public class Horse extends Animal {
 
     private static int count;
 
-    public Dog(String breed, String name, double maxRunDistance, double maxSwimDistance) {
-        super(breed);
+    public Horse(String name, double maxRunDistance, double maxSwimDistance) {
         this.name = name;
         this.run = maxRunDistance;
         this.swim = maxSwimDistance;
@@ -14,5 +13,10 @@ public class Dog extends AnimalWithBreed {
 
     public static int getCount() {
         return count;
+    }
+
+    @Override
+    protected void swim(double distance) {
+        System.out.println("Horses can't swim that far.");
     }
 }
