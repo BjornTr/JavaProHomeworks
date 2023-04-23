@@ -7,6 +7,7 @@ import org.hillel.homework9.config.FileLoggerConfigurationLoader;
 import org.hillel.homework9.exception.FileMaxSizeReachedException;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -34,7 +35,7 @@ public class FileLogger implements Logger {
     }
 
     public void error(String message) {
-        if (configuration.getLevel().ordinal() == LoggingLevel.ERROR.ordinal()) {
+        if (configuration.getLevel().ordinal() >= LoggingLevel.ERROR.ordinal()) {
             logMessage(LoggerUtil.formatMessage(message, LoggingLevel.ERROR));
         }
     }
@@ -72,22 +73,22 @@ public class FileLogger implements Logger {
 
     private void writeToFile(String message, File file) throws IOException {
 
-        if (Files.size(file.toPath()) > configuration.getMaxSize()) {
-            throw new FileMaxSizeReachedException("File size is reached");
+        try (FileWriter writer = new FileWriter(file, true)) {
+            if (Files.size(Paths.get(file.getAbsolutePath())) > this.configuration.getMaxSize()) {
+                throw new FileMaxSizeReachedException("File reached size limits");
+            }
+            writer.write(message);
+            writer.write("\n");
         }
     }
 
-    public File getFile() {
-        return file;
-    }
 
     private String getLogName() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd_MM_yyyy_HH_mm_ss.SSS");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd_MM_yyyy_HH_mm_ss");
         return new StringBuilder()
                 .append(this.configuration.getPath())
-                .append("_")
+                .append("log_")
                 .append(formatter.format(LocalDateTime.now()))
-                .append(".log")
                 .append(this.configuration.getFormat())
                 .toString();
     }

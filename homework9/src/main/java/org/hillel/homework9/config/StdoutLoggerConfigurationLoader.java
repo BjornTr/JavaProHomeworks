@@ -14,13 +14,13 @@ public class StdoutLoggerConfigurationLoader implements LoggerConfigurationLoade
         reader = new PropertyReader();
     }
 
-    public LoggerConfiguration load() {
+    public StdoutLoggerConfiguration load() {
         return StdoutLoggerConfiguration.builder()
                 .level(LoggingLevel.DEBUG)
                 .build();
     }
 
-    public LoggerConfiguration load(String path) {
+    public StdoutLoggerConfiguration load(String path) {
         Properties properties = reader.getProperties(path);
         return StdoutLoggerConfiguration.builder()
                 .level(LoggingLevel.valueOf(properties.getProperty("level")))
