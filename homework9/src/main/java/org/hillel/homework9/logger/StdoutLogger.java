@@ -22,7 +22,7 @@ public class StdoutLogger implements Logger {
     }
 
     public void error(String message) {
-        if (configuration.getLevel().ordinal() == LoggingLevel.ERROR.ordinal()) {
+        if (configuration.getLevel().ordinal() >= LoggingLevel.ERROR.ordinal()) {
             logMessage(LoggerUtil.formatMessage(message, LoggingLevel.ERROR));
         }
     }
