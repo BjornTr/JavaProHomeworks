@@ -22,15 +22,11 @@ public class ArrayTaskTest {
 
     @Test
     void testLastFour3() {
-
         int[] array3 = {1, 2, 3};
-        try {
-            ArraysTask.newArrayAfterLastFour(array3);
-            fail("RuntimeException expected if array doesn't contain 4");
-        } catch (RuntimeException e) {
-            System.out.println("Doesn't contain 4");
-        }
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> ArraysTask.newArrayAfterLastFour(array3));
+        assertEquals("Array doesn't contain 4", exception.getMessage());
     }
+
 
     @Test
     void testLastFour4() {
