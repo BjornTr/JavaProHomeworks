@@ -1,7 +1,5 @@
 package MethodsWithList;
 
-import lombok.AllArgsConstructor;
-
 import java.util.*;
 
 public class ListMethods {
