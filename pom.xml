@@ -16,9 +16,10 @@
         <module>homework6</module>
         <module>homework7</module>
         <module>homework8</module>
-<!--        <module>homework9</module>-->
+        <module>homework9</module>
         <module>homework11</module>
         <module>property-reader</module>
+        <module>homework12</module>
     </modules>
 
     <properties>
@@ -28,7 +29,6 @@
         <junit.version>5.9.2</junit.version>
         <maven-assembly-plugin.version>3.5.0</maven-assembly-plugin.version>
         <maven-project-info-reports-plugin.version>3.4.2</maven-project-info-reports-plugin.version>
-        <property-reader.version>0.0.1</property-reader.version>
         <lombok.version>1.18.26</lombok.version>
         <mokhito.version>4.11.0</mokhito.version>
         <easy-random.vertion>4.0.0</easy-random.vertion>
@@ -38,11 +38,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.hillel</groupId>
-            <artifactId>property-reader</artifactId>
-            <version>${property-reader.version}</version>
-        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -66,6 +61,12 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.24.2</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -99,18 +100,18 @@
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>${maven-project-info-reports-plugin.version}</version>
             </plugin>
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${surefire.version}</version>
-                <configuration>
-                    <excludes>
-                        <exclude>**/integration/*Test.java</exclude>
-                    </excludes>
-                    <includes>
-                        <include>*Test.java</include>
-                    </includes>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                <version>${surefire.version}</version>-->
+<!--                <configuration>-->
+<!--                    <excludes>-->
+<!--                        <exclude>**/integration/*Test.java</exclude>-->
+<!--                    </excludes>-->
+<!--                    <includes>-->
+<!--                        <include>*Test.java</include>-->
+<!--                    </includes>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
