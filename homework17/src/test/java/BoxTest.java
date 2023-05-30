@@ -13,6 +13,17 @@ public class BoxTest {
     }
 
     @Test
+    public void testAddFruit() {
+        Apple apple = new Apple();
+
+        Box<Apple> appleBox = new Box<>();
+        appleBox.addFruit(apple);
+
+        Assertions.assertEquals(1, appleBox.getFruits().size());
+        Assertions.assertEquals(apple, appleBox.getFruits().get(0));
+    }
+
+    @Test
     public void testAddFruits() {
         Apple apple1 = new Apple();
         Apple apple2 = new Apple();
@@ -59,4 +70,20 @@ public class BoxTest {
         Assertions.assertEquals(3.0f, appleBox1.getWeight(), 0.0001f);
     }
 
+    @Test
+    public void testMerge() {
+        Apple apple1 = new Apple();
+        Apple apple2 = new Apple();
+
+        Box<Apple> appleBox1 = new Box<>();
+        appleBox1.addFruit(apple1);
+
+        Box<Apple> appleBox2 = new Box<>();
+        appleBox2.addFruit(apple2);
+
+        appleBox1.merge(appleBox2);
+
+        Assertions.assertEquals(2, appleBox1.getFruits().size());
+        Assertions.assertEquals(0, appleBox2.getFruits().size());
+    }
 }
