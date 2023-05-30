@@ -1,6 +1,9 @@
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
 public class Box<T extends Fruit> {
     private final List<T> fruits;
 
@@ -23,26 +26,17 @@ public class Box<T extends Fruit> {
     }
 
     public float getWeight() {
-        float totalWeight = 0.0f;
-        for (T fruit : fruits) {
-            totalWeight += fruit.getWeight();
+        if (fruits.isEmpty()) {
+            return 0.0f;
         }
-        return totalWeight;
+        return fruits.size() * fruits.get(0).getWeight();
     }
 
     public boolean compare(Box<?> otherBox) {
-        if (fruits.isEmpty() && otherBox.fruits.isEmpty()) {
-            return true;
-        } else if (fruits.isEmpty() || otherBox.fruits.isEmpty()) {
-            return false;
-        } else {
-            return fruits.get(0).getClass().equals(otherBox.fruits.get(0).getClass()) &&
-                    Math.abs(this.getWeight() - otherBox.getWeight()) < 0.0001;
-        }
+        return Math.abs(this.getWeight() - otherBox.getWeight()) < 0.0001;
     }
 
-
-    public void merge(Box<T> otherBox) {
+    public void merge(Box<? extends T> otherBox) {
         if (this == otherBox) {
             return;
         }
@@ -53,8 +47,6 @@ public class Box<T extends Fruit> {
         } else if (fruits.get(0).getClass().equals(otherBox.fruits.get(0).getClass())) {
             fruits.addAll(otherBox.fruits);
             otherBox.fruits.clear();
-        } else {
-            throw new IllegalArgumentException("Cannot merge boxes with fruits of different types");
         }
     }
 }
