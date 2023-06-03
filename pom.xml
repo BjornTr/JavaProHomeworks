@@ -27,6 +27,7 @@
         <module>homework17</module>
         <module>homework18</module>
         <module>homework19</module>
+        <module>homework20</module>
     </modules>
 
     <properties>
@@ -57,12 +58,12 @@
             <version>${mokhito.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.jeasy</groupId>
-            <artifactId>easy-random-core</artifactId>
-            <version>${easy-random.vertion}</version>
-            <scope>test</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.jeasy</groupId>-->
+<!--            <artifactId>easy-random-core</artifactId>-->
+<!--            <version>${easy-random.vertion}</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
