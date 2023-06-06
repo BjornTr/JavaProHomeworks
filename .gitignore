@@ -27,6 +27,7 @@
 .idea/
 .git/
 .out/
+.gitignore
 
 
 /**/target/
