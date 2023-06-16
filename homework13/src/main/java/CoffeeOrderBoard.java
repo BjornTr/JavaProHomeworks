@@ -1,21 +1,21 @@
-import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 
 public class CoffeeOrderBoard {
-    private final List<Order> orders = new ArrayList<>();
+    private final List<Order> orders = new LinkedList<>();
     private int orderNumber = 1;
 
-    public void addOrder(Order order) {
+    public void addOrder(String name) {
         for (int i = 0; i < orders.size(); i++) {
             Order existingOrder = orders.get(i);
-            if (existingOrder.getName().equals(order.getName())) {
-                Order updatedOrder = new Order(orderNumber++, order.getName());
+            if (existingOrder.getName().equals(name)) {
+                Order updatedOrder = new Order(existingOrder.getOrderNumber(), name);
                 orders.set(i, updatedOrder);
                 return;
             }
         }
-        orders.add(new Order(orderNumber++, order.getName()));
+        orders.add(new Order(orderNumber++, name));
     }
 
     public void deliver(int orderNumber) {
@@ -41,6 +41,6 @@ public class CoffeeOrderBoard {
     }
 
     public List<Order> getOrders() {
-        return new ArrayList<>(orders);
+        return orders;
     }
 }
