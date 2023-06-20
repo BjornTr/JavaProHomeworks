@@ -35,6 +35,7 @@
         <module>homework27-server</module>
         <module>homework27-client</module>
         <module>SOAP-Tomcat</module>
+        <module>homework28</module>
     </modules>
 
     <properties>
