@@ -1,11 +1,11 @@
-import entity.Homework;
-import entity.Lesson;
+import orders.entity.Homework;
+import orders.entity.Lesson;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import enums.DataBaseConnection;
-import repository.LessonDao;
+import orders.repository.LessonDao;
 
 import java.sql.*;
 import java.time.LocalDateTime;
