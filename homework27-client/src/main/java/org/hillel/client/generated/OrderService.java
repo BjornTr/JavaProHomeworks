@@ -29,18 +29,6 @@ public interface OrderService {
     /**
      * 
      * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "addOrder", targetNamespace = "http://service.orders/", className = "org.hillel.client.generated.AddOrder")
-    @ResponseWrapper(localName = "addOrderResponse", targetNamespace = "http://service.orders/", className = "org.hillel.client.generated.AddOrderResponse")
-    @Action(input = "http://service.orders/OrderService/addOrderRequest", output = "http://service.orders/OrderService/addOrderResponse")
-    public void addOrder(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Order arg0);
-
-    /**
-     * 
-     * @param arg0
      * @return
      *     returns org.hillel.client.generated.Order
      */
@@ -52,6 +40,18 @@ public interface OrderService {
     public Order getById(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "addOrder", targetNamespace = "http://service.orders/", className = "org.hillel.client.generated.AddOrder")
+    @ResponseWrapper(localName = "addOrderResponse", targetNamespace = "http://service.orders/", className = "org.hillel.client.generated.AddOrderResponse")
+    @Action(input = "http://service.orders/OrderService/addOrderRequest", output = "http://service.orders/OrderService/addOrderResponse")
+    public void addOrder(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Order arg0);
 
     /**
      * 

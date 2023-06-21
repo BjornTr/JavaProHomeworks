@@ -12,7 +12,7 @@ import java.util.List;
 @WebService
 public class OrderService extends OrderRepository {
 
-    private OrderRepository orderRepository;
+    private OrderRepository orderRepository = new OrderRepository();
 
     public OrderService(OrderRepository orderRepository) {
         this.orderRepository = orderRepository;

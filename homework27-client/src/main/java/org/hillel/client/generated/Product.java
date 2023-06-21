@@ -39,10 +39,6 @@ public class Product {
     protected int id;
     protected String name;
 
-    public Product() {
-    }
-
-
     /**
      * Gets the value of the cost property.
      * 
