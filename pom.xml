@@ -33,6 +33,10 @@
         <module>homework23</module>
         <module>homework25</module>
         <module>homework26</module>
+        <module>homework27-server</module>
+        <module>homework27-client</module>
+        <module>SOAP-Tomcat</module>
+        <module>homework28</module>  
     </modules>
 
     <properties>
@@ -63,12 +67,6 @@
             <version>${mokhito.version}</version>
             <scope>test</scope>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>org.jeasy</groupId>-->
-        <!--            <artifactId>easy-random-core</artifactId>-->
-        <!--            <version>${easy-random.vertion}</version>-->
-        <!--            <scope>test</scope>-->
-        <!--        </dependency>-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -81,11 +79,7 @@
             <version>3.24.2</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.33</version>
-        </dependency>
+
     </dependencies>
 
     <build>
@@ -118,18 +112,6 @@
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>${maven-project-info-reports-plugin.version}</version>
             </plugin>
-            <!--            <plugin>-->
-            <!--                <artifactId>maven-surefire-plugin</artifactId>-->
-            <!--                <version>${surefire.version}</version>-->
-            <!--                <configuration>-->
-            <!--                    <excludes>-->
-            <!--                        <exclude>**/integration/*Test.java</exclude>-->
-            <!--                    </excludes>-->
-            <!--                    <includes>-->
-            <!--                        <include>*Test.java</include>-->
-            <!--                    </includes>-->
-            <!--                </configuration>-->
-            <!--            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>

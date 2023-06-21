@@ -1,7 +1,7 @@
-package repository;
+package orders.repository;
 
-import entity.Homework;
-import entity.Lesson;
+import orders.entity.Homework;
+import orders.entity.Lesson;
 import enums.DataBaseConnection;
 import lombok.SneakyThrows;
 

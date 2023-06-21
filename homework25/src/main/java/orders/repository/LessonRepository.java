@@ -1,6 +1,6 @@
-package repository;
+package orders.repository;
 
-import entity.Lesson;
+import orders.entity.Lesson;
 
 import java.sql.SQLException;
 import java.util.List;
