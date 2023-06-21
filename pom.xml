@@ -32,10 +32,11 @@
         <module>homework22</module>
         <module>homework23</module>
         <module>homework25</module>
+        <module>homework26</module>
         <module>homework27-server</module>
         <module>homework27-client</module>
         <module>SOAP-Tomcat</module>
-        <module>homework28</module>
+        <module>homework28</module>  
     </modules>
 
     <properties>
