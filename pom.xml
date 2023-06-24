@@ -36,7 +36,8 @@
         <module>homework27-server</module>
         <module>homework27-client</module>
         <module>SOAP-Tomcat</module>
-        <module>homework28</module>  
+        <module>homework28</module>
+        <module>homework29</module>
     </modules>
 
     <properties>
@@ -86,6 +87,11 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.4.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>${maven-assembly-plugin.version}</version>
                 <executions>
@@ -97,7 +103,7 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>org.hillel.MyMathLib</mainClass>
+                                    <mainClass>org.hillel.Main</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>
