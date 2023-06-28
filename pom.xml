@@ -38,6 +38,7 @@
         <module>SOAP-Tomcat</module>
         <module>homework28</module>
         <module>homework29</module>
+        <module>homework30</module>
     </modules>
 
     <properties>
