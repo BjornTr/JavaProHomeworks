@@ -39,6 +39,7 @@
         <module>homework28</module>
         <module>homework29</module>
         <module>homework30</module>
+        <module>homework_spring</module>
     </modules>
 
     <properties>
@@ -67,6 +68,12 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-inline</artifactId>
             <version>${mokhito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.4.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
