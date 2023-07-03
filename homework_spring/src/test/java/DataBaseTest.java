@@ -4,7 +4,6 @@ import Spring_project_1.repository.ProductRepository;
 import com.zaxxer.hikari.HikariDataSource;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.sql.Connection;
@@ -20,10 +19,8 @@ public class DataBaseTest {
 
     private CartDao cartDao;
 
-    @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    @Autowired
     private ProductRepository productRepository;
 
     @BeforeEach
