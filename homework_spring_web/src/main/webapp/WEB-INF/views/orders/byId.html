@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="">
+<head>
+    <title>Order Details</title>
+</head>
+<body>
+<h1>Order Details</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Cost</th>
+        <th>Products</th>
+    </tr>
+    <tr>
+        <td th:text="${order.id}"></td>
+        <td th:text="${order.date}"></td>
+        <td th:text="${order.cost}"></td>
+        <td>
+            <ul>
+                <!-- Iterate over the products within the order -->
+                <li th:each="product : ${order.products}" th:text="${product.name}"></li>
+            </ul>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
