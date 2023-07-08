@@ -40,6 +40,7 @@
         <module>homework29</module>
         <module>homework30</module>
         <module>homework_spring</module>
+        <module>homework_spring_web</module>
     </modules>
 
     <properties>

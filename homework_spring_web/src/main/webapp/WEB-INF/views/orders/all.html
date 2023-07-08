@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <title>All Orders</title>
+</head>
+<body>
+<h1>All Orders</h1>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Date</th>
+    <th>Cost</th>
+    <th>Products</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- Use Thymeleaf or other template engine to iterate over the orders -->
+  <tr th:each="order : ${orders}">
+    <td th:text="${order.id}"></td>
+    <td th:text="${order.date}"></td>
+    <td th:text="${order.cost}"></td>
+    <td>
+      <ul>
+        <!-- Iterate over the products within each order -->
+        <li th:each="product : ${order.products}" th:text="${product.name}"></li>
+      </ul>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
